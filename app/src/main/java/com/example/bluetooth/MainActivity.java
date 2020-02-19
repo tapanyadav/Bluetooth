@@ -2,6 +2,7 @@ package com.example.bluetooth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     BluetoothAdapter mBlueAdapter;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,18 +124,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode){
-            case REQUEST_ENABLE_BT:
-                if (resultCode == RESULT_OK){
-                    //bluetooth is on
-                    mBlueIv.setImageResource(R.drawable.ic_action_on);
-                    showToast("Bluetooth is on");
-                }
-                else {
-                    //user denied to turn bluetooth on
-                    showToast("couldn't on bluetooth");
-                }
-                break;
+        if (requestCode == REQUEST_ENABLE_BT) {
+            if (resultCode == RESULT_OK) {
+                //bluetooth is on
+                mBlueIv.setImageResource(R.drawable.ic_action_on);
+                showToast("Bluetooth is on");
+            } else {
+                //user denied to turn bluetooth on
+                showToast("couldn't on bluetooth");
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

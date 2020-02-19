@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Bluetooth</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="senddt">SendDT</string>
+    <string name="send">Send</string>
+    <string name="turn_on">Turn On</string>
+    <string name="turn_off">Turn Off</string>
+    <string name="paired_devices">Paired Devices</string>
+    <string name="get_paired_devices">Get Paired Devices</string>
+    <string name="discoverable">Discoverable</string>
+    <string name="todo">TODO</string>
 </resources>
